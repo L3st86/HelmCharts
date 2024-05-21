@@ -80,7 +80,7 @@ autoscaling:
 
 persistence:
   enabled: true
-  name: pvc-uptimekuma
+  name: pv-uptimekuma
   accessMode: ReadWriteOnce
   size: 1Gi
   storageClassName: longhorn
