@@ -2,15 +2,15 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "UptimeKuma.fullname" . }}
+  name: {{ include "uptimekuma.fullname" . }}
   namespace: {{ .Values.namespace }}
   labels:
-    {{- include "UptimeKuma.labels" . | nindent 4 }}
+    {{- include "uptimekuma.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "UptimeKuma.fullname" . }}
+    name: {{ include "uptimekuma.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

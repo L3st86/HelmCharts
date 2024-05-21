@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "UptimeKuma.name" -}}
+{{- define "uptimekuma.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "UptimeKuma.fullname" -}}
+{{- define "uptimekuma.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "UptimeKuma.chart" -}}
+{{- define "uptimekuma.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "UptimeKuma.labels" -}}
-helm.sh/chart: {{ include "UptimeKuma.chart" . }}
-{{ include "UptimeKuma.selectorLabels" . }}
+{{- define "uptimekuma.labels" -}}
+helm.sh/chart: {{ include "uptimekuma.chart" . }}
+{{ include "uptimekuma.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "UptimeKuma.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "UptimeKuma.name" . }}
+{{- define "uptimekuma.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "uptimekuma.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "UptimeKuma.serviceAccountName" -}}
+{{- define "uptimekuma.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "UptimeKuma.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "uptimekuma.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
