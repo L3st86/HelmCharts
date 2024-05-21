@@ -11,8 +11,8 @@ image:
   tag: "1.23.13-alpine"
 
 imagePullSecrets:
-nameOverride: "uptime-kuma"
-fullnameOverride: "uptime-kuma"
+nameOverride: "uptimekuma"
+fullnameOverride: "uptimekuma"
 
 serviceAccount:
   # Specifies whether a service account should be created
