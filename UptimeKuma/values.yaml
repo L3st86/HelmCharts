@@ -79,7 +79,7 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 persistence:
-  enabled: false
+  enabled: true
   name: pvc-uptimekuma
   accessMode: ReadWriteOnce
   size: 1Gi
