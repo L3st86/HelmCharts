@@ -1,4 +1,14 @@
 # HelmCharts
 Helm Charts for HomeLab
 
- UptimeKuma - v.0.1.0
+Commands for building:
+helm lint <chartname>
+helm package <chartname>
+
+
+Charts and versions:
+
+UptimeKuma - v.0.1.0
+Install:
+helm repo add l3st86 https://l3st86.github.io/HelmCharts/
+helm install helm l3st86/UptimeKuma

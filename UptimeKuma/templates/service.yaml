@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "UptimeKuma.fullname" . }}
+  namespace: {{ .Values.namespace }}
   labels:
     {{- include "UptimeKuma.labels" . | nindent 4 }}
 spec:

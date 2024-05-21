@@ -3,6 +3,7 @@ apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ include "UptimeKuma.fullname" . }}
+  namespace: {{ .Values.namespace }}
   labels:
     {{- include "UptimeKuma.labels" . | nindent 4 }}
 spec:
