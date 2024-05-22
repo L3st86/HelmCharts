@@ -1,7 +1,8 @@
 # HelmCharts
 
 ## Helm Charts for HomeLab
-Repository: https://github.com/L3st86/HelmCharts
+Repository: [GitHub Repo](https://github.com/L3st86/HelmCharts)
+
 Charts and versions:
 
 UptimeKuma - v.0.1.6 (Latest)
