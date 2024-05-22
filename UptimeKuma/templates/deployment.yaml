@@ -33,7 +33,7 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}          
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
               containerPort: 3001
@@ -48,13 +48,17 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.persistence.enabled }}
           volumeMounts:
             - name: {{ .Values.persistence.name }}
               mountPath: /app/data
+          {{- end }}
+      {{- if .Values.persistence.enabled }}
       volumes:
         - name: {{ .Values.persistence.name }}
           persistentVolumeClaim:
             claimName: pvc-{{ .Values.persistence.name }}
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

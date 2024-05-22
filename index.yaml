@@ -3,7 +3,17 @@ entries:
   uptimekuma:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-05-22T20:26:08.7384486+02:00"
+    created: "2024-05-22T21:28:36.8618817+02:00"
+    description: A Helm chart for Kubernetes
+    digest: 6adc386410a86de7b1827358f47d056f4fab445635272f51a527848f98c929b7
+    name: uptimekuma
+    type: application
+    urls:
+    - Charts/uptimekuma-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-05-22T21:28:36.8613817+02:00"
     description: A Helm chart for Kubernetes
     digest: 886ac5307baf26335567323e19d74c27839f8cedec0ce4b2468c54ef69c29e64
     name: uptimekuma
@@ -13,7 +23,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-05-22T20:26:08.7379456+02:00"
+    created: "2024-05-22T21:28:36.8563774+02:00"
     description: A Helm chart for Kubernetes
     digest: 59ef59b764c1182531ddef7740f154d9f43005262f173660a15d333ac2feb2b9
     name: uptimekuma
@@ -21,4 +31,4 @@ entries:
     urls:
     - Charts/uptimekuma-0.1.4.tgz
     version: 0.1.4
-generated: "2024-05-22T20:26:08.7369454+02:00"
+generated: "2024-05-22T21:28:36.8513734+02:00"
