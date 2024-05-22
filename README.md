@@ -10,6 +10,7 @@ UptimeKuma - v.0.1.4
 ```sh
 helm lint <chartname>
 helm package <chartname>
+helm repo index .
 ```
 ### Commands for Deploy with helm:
 ```sh
