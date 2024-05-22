@@ -11,9 +11,9 @@ UptimeKuma - v.0.1.4
 helm lint <chartname>
 helm package <chartname>
 ```
-### Commands for building:
+### Commands for Deploy with helm:
 ```sh
 helm repo add l3st86 https://l3st86.github.io/HelmCharts/
-helm install helm l3st86/UptimeKuma
-helm install helm l3st86/UptimeKuma --namespace mi-namespace --set namespace=mi-namespace
+helm install kuma l3st86/UptimeKuma
+helm install kuma l3st86/UptimeKuma --namespace my-namespace --set namespace=my-namespace
 ```
