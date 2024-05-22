@@ -4,6 +4,7 @@ Helm Charts for HomeLab
 Commands for building:
 helm lint <chartname>
 helm package <chartname>
+helm repo index .
 
 
 Charts and versions:
