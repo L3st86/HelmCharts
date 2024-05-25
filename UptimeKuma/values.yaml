@@ -79,11 +79,11 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 persistence:
-  enabled: true
-  name: "uptime-kuma"
-  accessMode: "ReadWriteOnce"
-  size: "1Gi"
-  storageClassName: "longhorn"
+  enabled: false
+  name: ""
+  accessMode: ""
+  size: ""
+  storageClassName: ""
 
 nodeSelector: {}
 
