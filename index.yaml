@@ -3,7 +3,21 @@ entries:
   uptimekuma:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-05-28T00:25:54.8716891+02:00"
+    created: "2024-05-28T19:11:52.4896919+02:00"
+    description: Monitoring Tool Uptime Kuma Chart
+    digest: 23c64eddbf718cd8935c2c028527086a64a5157625e21a10e9c5a31a81c3d794
+    home: https://github.com/L3st86/HelmCharts/tree/master/UptimeKuma
+    icon: https://www.myqnap.org/wp-content/uploads/uptime-logo.png
+    name: uptimekuma
+    sources:
+    - https://github.com/louislam/uptime-kuma
+    type: application
+    urls:
+    - Charts/uptimekuma-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-05-28T19:11:52.48719+02:00"
     description: Monitoring Tool Uptime Kuma Chart
     digest: 221f4c71571cb7303994b2495ddf4f57eedd778e703fa4a3096c6b381e9a4d07
     home: https://github.com/L3st86/HelmCharts/tree/master/UptimeKuma
@@ -17,7 +31,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-05-28T00:25:54.8706885+02:00"
+    created: "2024-05-28T19:11:52.4425304+02:00"
     description: A Helm chart for Kubernetes
     digest: 6adc386410a86de7b1827358f47d056f4fab445635272f51a527848f98c929b7
     name: uptimekuma
@@ -27,7 +41,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-05-28T00:25:54.8701872+02:00"
+    created: "2024-05-28T19:11:52.4325069+02:00"
     description: A Helm chart for Kubernetes
     digest: 886ac5307baf26335567323e19d74c27839f8cedec0ce4b2468c54ef69c29e64
     name: uptimekuma
@@ -37,7 +51,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-05-28T00:25:54.8691869+02:00"
+    created: "2024-05-28T19:11:52.4209962+02:00"
     description: A Helm chart for Kubernetes
     digest: 59ef59b764c1182531ddef7740f154d9f43005262f173660a15d333ac2feb2b9
     name: uptimekuma
@@ -45,4 +59,4 @@ entries:
     urls:
     - Charts/uptimekuma-0.1.4.tgz
     version: 0.1.4
-generated: "2024-05-28T00:25:54.8686866+02:00"
+generated: "2024-05-28T19:11:52.3987718+02:00"
