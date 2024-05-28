@@ -1,6 +1,6 @@
 # uptime-kuma
 
-![Version: 0.1.7](https://img.shields.io/badge/Version-0.1.7-informational?style=flat-square) ![AppVersion: 0.1.7](https://img.shields.io/badge/AppVersion-0.1.7-informational?style=flat-square)
+![Version: 0.1.9](https://img.shields.io/badge/Version-0.1.9-informational?style=flat-square) ![AppVersion: 0.1.9](https://img.shields.io/badge/AppVersion-0.1.9-informational?style=flat-square)
 
 Monitoring Tool Uptime Kuma Chart
 
@@ -48,7 +48,7 @@ helm install kuma l3st86/UptimeKuma -f values.yaml
 
 ## Changelog
 
-### Version 0.1.7
+### Version 0.1.9
 
 #### Added
 
