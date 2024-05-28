@@ -3,7 +3,7 @@ entries:
   uptimekuma:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-05-28T20:48:55.1816604+02:00"
+    created: "2024-05-28T21:40:29.6940712+02:00"
     description: Monitoring Tool Uptime Kuma Chart
     digest: aeae1629899c5f4264e283bc5ea3be248c7a3ca4af6de6d5f309a9ad15e05aa4
     home: https://github.com/L3st86/HelmCharts/tree/master/UptimeKuma
@@ -15,4 +15,4 @@ entries:
     urls:
     - Charts/uptimekuma-0.1.9.tgz
     version: 0.1.9
-generated: "2024-05-28T20:48:55.1731219+02:00"
+generated: "2024-05-28T21:40:29.6935603+02:00"
