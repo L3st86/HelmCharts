@@ -1,8 +1,8 @@
-# uptime-kuma
+# Duplicati
 
 ![Version: 0.1.0-beta.1](https://img.shields.io/badge/Version-0.1.0-beta.1-informational?style=flat-square) ![AppVersion: 1.16.1](https://img.shields.io/badge/AppVersion-1.16.1-informational?style=flat-square)
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/helm-l3st86)](https://artifacthub.io/packages/search?repo=helm-l3st86)
-Monitoring Tool Uptime Kuma Chart
+Duplicati Helm Chart (Backups)
 
 ## Source Code
 
@@ -24,7 +24,7 @@ helm install duplicati l3st86/Duplicati
 
 To install the chart in namespace 'backups'
 ```console
-helm install kuma l3st86/UptimeKuma --namespace backups --set namespace=backups
+helm install duplicati l3st86/Duplicati --namespace backups --set namespace=backups
 ```
 
 ## Uninstalling the Chart
@@ -43,7 +43,7 @@ Read through the [values.yaml](./values.yaml) file. It has several commented out
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart.
 
 ```console
-helm install kuma l3st86/Duplicati -f values.yaml
+helm install duplicati l3st86/Duplicati -f values.yaml
 ```
 
 ## Changelog
