@@ -1,0 +1,53 @@
+{{- if .Values.persistence.config.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "Duplicati.fullname" . }}-config
+spec:
+  accessModes:
+    - {{ .Values.persistence.config.accessMode }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.config.size }}
+  storageClassName: {{ .Values.persistence.config.storageClassName }}
+{{- end }}
+{{- if .Values.persistence.source.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "Duplicati.fullname" . }}-source
+spec: 
+  accessModes:
+    - {{ .Values.persistence.source.accessMode }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.source.size }}
+  storageClassName: {{ .Values.persistence.source.storageClassName }}
+{{- end }}
+{{- if .Values.persistence.backups.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "Duplicati.fullname" . }}-backups
+spec:
+  accessModes:
+    - {{ .Values.persistence.backups.accessMode }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.backups.size }}
+  storageClassName: {{ .Values.persistence.backups.storageClassName }}
+{{- end }}
+{{- if .Values.persistence.nfs.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "Duplicati.fullname" . }}-nfs
+  namespace: {{ .Values.namespace }}
+spec:
+  accessModes:
+    - {{ .Values.persistence.nfs.accessMode }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.nfs.size }}
+  storageClassName: {{ .Values.persistence.nfs.storageClassName }}
+{{- end }}

@@ -19,6 +19,7 @@ Readme: [Uptime Kuma](https://github.com/L3st86/HelmCharts/blob/master/UptimeKum
 
 ### Notes - Commands for building Charts:
 ```sh
+helm create <chartname>
 helm lint <chartname>
 helm package <chartname>
 helm repo index .
