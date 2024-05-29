@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "Duplicati.fullname" . }}-test-connection"
+  name: "{{ include "duplicati.fullname" . }}-test-connection"
   labels:
-    {{- include "Duplicati.labels" . | nindent 4 }}
+    {{- include "duplicati.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test
 spec:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "Duplicati.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "duplicati.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never

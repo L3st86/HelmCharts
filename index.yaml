@@ -3,7 +3,7 @@ entries:
   Duplicati:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-05-29T23:55:03.8726977+02:00"
+    created: "2024-05-30T00:19:22.9414482+02:00"
     description: A Helm chart for Duplicati
     digest: 40453f3d13cd2d94cfcae750f4b63b05aa2eea0db9619d07857d5346a9cf490b
     home: https://github.com/L3st86/HelmCharts/tree/master/Duplicati
@@ -15,10 +15,25 @@ entries:
     urls:
     - Charts/Duplicati-0.1.0-beta.1.tgz
     version: 0.1.0-beta.1
+  duplicati:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-05-30T00:19:22.9419479+02:00"
+    description: A Helm chart for duplicati
+    digest: 44b5e757a2d84603aaff3633d3b9c025cabfc2066f33306bfe4f7599d02ba667
+    home: https://github.com/L3st86/HelmCharts/tree/master/duplicati
+    icon: https://raw.githubusercontent.com/L3st86/HelmCharts/master/duplicati/images/duplicati-logo.png
+    name: duplicati
+    sources:
+    - https://github.com/linuxserver/docker-duplicati
+    type: application
+    urls:
+    - Charts/duplicati-0.1.0-beta.2.tgz
+    version: 0.1.0-beta.2
   uptimekuma:
   - apiVersion: v2
     appVersion: 1.16.1
-    created: "2024-05-29T23:55:03.8731989+02:00"
+    created: "2024-05-30T00:19:22.942949+02:00"
     description: Monitoring Tool Uptime Kuma Chart
     digest: 683c21abb006d66018f6b7cbc95e7d6ad0cf754b7caee8ea656d84c377b2166f
     home: https://github.com/L3st86/HelmCharts/tree/master/UptimeKuma
@@ -32,7 +47,7 @@ entries:
     version: 0.1.10
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-05-29T23:55:03.8742001+02:00"
+    created: "2024-05-30T00:19:22.9434496+02:00"
     description: Monitoring Tool Uptime Kuma Chart
     digest: aeae1629899c5f4264e283bc5ea3be248c7a3ca4af6de6d5f309a9ad15e05aa4
     home: https://github.com/L3st86/HelmCharts/tree/master/UptimeKuma
@@ -44,4 +59,4 @@ entries:
     urls:
     - Charts/uptimekuma-0.1.9.tgz
     version: 0.1.9
-generated: "2024-05-29T23:55:03.8716978+02:00"
+generated: "2024-05-30T00:19:22.940447+02:00"

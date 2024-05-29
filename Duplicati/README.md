@@ -1,8 +1,8 @@
-# Duplicati
+# duplicati
 
-![Version: 0.1.0-beta.1](https://img.shields.io/badge/Version-0.1.0-beta.1-informational?style=flat-square) ![AppVersion: 1.16.1](https://img.shields.io/badge/AppVersion-1.16.1-informational?style=flat-square)
+![Version: 0.1.0-beta.2](https://img.shields.io/badge/Version-0.1.0-beta.2-informational?style=flat-square) ![AppVersion: 1.16.1](https://img.shields.io/badge/AppVersion-1.16.1-informational?style=flat-square)
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/helm-l3st86)](https://artifacthub.io/packages/search?repo=helm-l3st86)
-Duplicati Helm Chart (Backups)
+duplicati Helm Chart (Backups)
 
 ## Source Code
 
@@ -17,14 +17,14 @@ Kubernetes: `>=1.16.0-0`
 ```console
 helm repo add l3st86 https://l3st86.github.io/HelmCharts/
 helm repo update
-helm install duplicati l3st86/Duplicati
+helm install duplicati l3st86/duplicati
 ```
 
 ## Installing the Chart
 
 To install the chart in namespace 'backups'
 ```console
-helm install duplicati l3st86/Duplicati --namespace backups --set namespace=backups
+helm install duplicati l3st86/duplicati --namespace backups --set namespace=backups
 ```
 
 ## Uninstalling the Chart
@@ -43,12 +43,12 @@ Read through the [values.yaml](./values.yaml) file. It has several commented out
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart.
 
 ```console
-helm install duplicati l3st86/Duplicati -f values.yaml
+helm install duplicati l3st86/duplicati -f values.yaml
 ```
 
 ## Changelog
 
-### Version 0.1.0-beta.1
+### Version 0.1.0-beta.2
 
 #### Added
 

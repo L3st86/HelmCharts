@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "Duplicati.fullname" . }}-config
+  name: {{ include "duplicati.fullname" . }}-config
 spec:
   accessModes:
     - {{ .Values.persistence.config.accessMode }}
@@ -15,7 +15,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "Duplicati.fullname" . }}-source
+  name: {{ include "duplicati.fullname" . }}-source
 spec: 
   accessModes:
     - {{ .Values.persistence.source.accessMode }}
@@ -28,7 +28,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "Duplicati.fullname" . }}-backups
+  name: {{ include "duplicati.fullname" . }}-backups
 spec:
   accessModes:
     - {{ .Values.persistence.backups.accessMode }}
@@ -41,7 +41,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "Duplicati.fullname" . }}-nfs
+  name: {{ include "duplicati.fullname" . }}-nfs
   namespace: {{ .Values.namespace }}
 spec:
   accessModes:
