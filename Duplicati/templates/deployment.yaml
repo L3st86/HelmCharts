@@ -69,17 +69,17 @@ spec:
         {{- if .Values.persistence.config.enabled }}
         - name: config
           persistentVolumeClaim:
-            claimName: pvc-config
+            claimName: pvc-duplicati-config
         {{- end }}
         {{- if .Values.persistence.source.enabled }}
         - name: source
           persistentVolumeClaim:
-            claimName: pvc-source
+            claimName: pvc-duplicati-source
         {{- end }}
         {{- if .Values.persistence.backups.enabled }}
         - name: backups
           persistentVolumeClaim:
-            claimName: pvc-backups
+            claimName: pvc-duplicati-backups
         {{- end }}
         {{- if .Values.persistence.nfs.enabled }}
         - name: nfs

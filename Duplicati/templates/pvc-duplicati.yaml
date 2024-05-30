@@ -2,7 +2,8 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "duplicati.fullname" . }}-config
+  name: pvc-duplicati-config
+  namespace: {{ .Values.namespace }}
 spec:
   accessModes:
     - {{ .Values.persistence.config.accessMode }}
@@ -10,25 +11,31 @@ spec:
     requests:
       storage: {{ .Values.persistence.config.size }}
   storageClassName: {{ .Values.persistence.config.storageClassName }}
+---
 {{- end }}
+
 {{- if .Values.persistence.source.enabled }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "duplicati.fullname" . }}-source
-spec: 
+  name: pvc-duplicati-source
+  namespace: {{ .Values.namespace }}
+spec:
   accessModes:
     - {{ .Values.persistence.source.accessMode }}
   resources:
     requests:
       storage: {{ .Values.persistence.source.size }}
   storageClassName: {{ .Values.persistence.source.storageClassName }}
+---
 {{- end }}
+
 {{- if .Values.persistence.backups.enabled }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "duplicati.fullname" . }}-backups
+  name: pvc-duplicati-backups
+  namespace: {{ .Values.namespace }}
 spec:
   accessModes:
     - {{ .Values.persistence.backups.accessMode }}
@@ -36,12 +43,28 @@ spec:
     requests:
       storage: {{ .Values.persistence.backups.size }}
   storageClassName: {{ .Values.persistence.backups.storageClassName }}
+---
 {{- end }}
+
 {{- if .Values.persistence.nfs.enabled }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-duplicati-nfs
+  namespace: {{ .Values.namespace }}
+spec:
+  capacity:
+    storage: {{ .Values.persistence.nfs.size }}
+  accessModes:
+    - {{ .Values.persistence.nfs.accessMode }}
+  nfs:
+    server: {{ .Values.persistence.nfs.server }}
+    path: {{ .Values.persistence.nfs.path }}
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "duplicati.fullname" . }}-nfs
+  name: pvc-duplicati-nfs
   namespace: {{ .Values.namespace }}
 spec:
   accessModes:
@@ -50,4 +73,5 @@ spec:
     requests:
       storage: {{ .Values.persistence.nfs.size }}
   storageClassName: {{ .Values.persistence.nfs.storageClassName }}
+  volumeName: pv-duplicati-nfs
 {{- end }}

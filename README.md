@@ -18,7 +18,7 @@ Readme: [Uptime Kuma](https://github.com/L3st86/HelmCharts/blob/master/UptimeKum
 
 # Duplicati
 
-![Version: 0.1.0-beta1](https://img.shields.io/badge/Version-0.1.0-beta1-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-0.1.0-beta1-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![AppVersion: 1.16.1](https://img.shields.io/badge/AppVersion-1.16.1-informational?style=flat-square)
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/helm-l3st86)](https://artifacthub.io/packages/search?repo=helm-l3st86)
 
 Duplicati Helm Chart (Backups)
