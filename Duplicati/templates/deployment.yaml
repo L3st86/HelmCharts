@@ -51,19 +51,19 @@ spec:
           volumeMounts:
             {{- if .Values.persistence.config.enabled }}
             - name: config
-              mountPath: /app/config
+              mountPath: /config
             {{- end }}
             {{- if .Values.persistence.source.enabled }}
             - name: source
-              mountPath: /app/source
+              mountPath: /source
             {{- end }}
             {{- if .Values.persistence.backups.enabled }}
             - name: backups
-              mountPath: /app/backups
+              mountPath: /backups
             {{- end }}
             {{- if .Values.persistence.nfs.enabled }}
             - name: nfs
-              mountPath: /app/nfs
+              mountPath: /nfs
             {{- end }}
       volumes:
         {{- if .Values.persistence.config.enabled }}

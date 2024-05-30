@@ -95,6 +95,7 @@ persistence:
     size: ""
     storageClassName: ""    
   # Extra volume to add nfs shared folder  
+  # will be mounted at /nfs 
   nfs:
     enabled: false  
     accessMode: ""
