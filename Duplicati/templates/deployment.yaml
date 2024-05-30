@@ -83,9 +83,8 @@ spec:
         {{- end }}
         {{- if .Values.persistence.nfs.enabled }}
         - name: nfs
-          nfs:
-            server: {{ .Values.persistence.nfs.server }}
-            path: {{ .Values.persistence.nfs.path }}
+          persistentVolumeClaim:
+            claimName: pvc-duplicati-nfs
         {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
