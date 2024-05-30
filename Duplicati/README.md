@@ -58,3 +58,4 @@ First Version Full working Released
 
 * Upgraded Release Notes
 * Upgraded Chart Version
+* Deleted old betas
