@@ -42,6 +42,7 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 8200
+  # ClusterIP or LoadBalancer  
 
 ingress:
   enabled: false
