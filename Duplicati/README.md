@@ -1,6 +1,6 @@
 # duplicati
 
-![Version: 0.1.0-beta.3](https://img.shields.io/badge/Version-0.1.0-beta.3-informational?style=flat-square) ![AppVersion: 1.16.1](https://img.shields.io/badge/AppVersion-1.16.1-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/helm-l3st86)](https://artifacthub.io/packages/search?repo=helm-l3st86)
 duplicati Helm Chart (Backups)
 
@@ -48,12 +48,13 @@ helm install duplicati l3st86/duplicati -f values.yaml
 
 ## Changelog
 
-### Version 0.1.0-beta.3
+### Version 0.1.0
 
 #### Added
 
-First Version Beta in progress
+First Version Full working Released
 
 #### Changed
 
 * Upgraded Release Notes
+* Upgraded Chart Version
