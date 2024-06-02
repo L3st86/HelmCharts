@@ -3,7 +3,7 @@ entries:
   duplicati:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-02T17:53:01.7993288+02:00"
+    created: "2024-06-02T18:04:39.3334325+02:00"
     description: A Helm chart for duplicati
     digest: 6ee228a002527d7d989f8e712744d50be78e3aec7571692f1a4ac54ae6ff74e5
     home: https://github.com/L3st86/HelmCharts/tree/master/duplicati
@@ -18,9 +18,9 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-02T17:53:01.8003301+02:00"
+    created: "2024-06-02T18:04:39.3339327+02:00"
     description: A Helm chart for jellyfin Media Server
-    digest: 434ad6304ee13af9777f80bcf67d75f65e2741128576e9efba5081ae987ab042
+    digest: 60b437e2d72f1bde0b4ae8885be13135ac43671495d6ca887d9613225b50cc42
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
     icon: https://raw.githubusercontent.com/L3st86/HelmCharts/master/jellyfin/images/jellyfin-logo.png
     name: jellyfin
@@ -28,12 +28,12 @@ entries:
     - https://github.com/jellyfin/jellyfin
     type: application
     urls:
-    - Charts/jellyfin-0.1.0.tgz
-    version: 0.1.0
+    - Charts/jellyfin-0.1.1.tgz
+    version: 0.1.1
   uptimekuma:
   - apiVersion: v2
     appVersion: 1.16.1
-    created: "2024-06-02T17:53:01.8365737+02:00"
+    created: "2024-06-02T18:04:39.3349356+02:00"
     description: Monitoring Tool Uptime Kuma Chart
     digest: 683c21abb006d66018f6b7cbc95e7d6ad0cf754b7caee8ea656d84c377b2166f
     home: https://github.com/L3st86/HelmCharts/tree/master/UptimeKuma
@@ -47,7 +47,7 @@ entries:
     version: 0.1.10
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-02T17:53:01.8557748+02:00"
+    created: "2024-06-02T18:04:39.3354337+02:00"
     description: Monitoring Tool Uptime Kuma Chart
     digest: aeae1629899c5f4264e283bc5ea3be248c7a3ca4af6de6d5f309a9ad15e05aa4
     home: https://github.com/L3st86/HelmCharts/tree/master/UptimeKuma
@@ -59,4 +59,4 @@ entries:
     urls:
     - Charts/uptimekuma-0.1.9.tgz
     version: 0.1.9
-generated: "2024-06-02T17:53:01.7674559+02:00"
+generated: "2024-06-02T18:04:39.3324141+02:00"
