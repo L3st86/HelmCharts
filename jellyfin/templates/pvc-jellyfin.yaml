@@ -1,0 +1,45 @@
+{{- if .Values.persistence.config.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-jellyfin-config
+  namespace: {{ .Values.namespace }}
+spec:
+  accessModes:
+    - {{ .Values.persistence.config.accessMode }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.config.size }}
+  storageClassName: {{ .Values.persistence.config.storageClassName }}
+---
+{{- end }}
+
+{{- if .Values.persistence.nfs.enabled }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-jellyfin-nfs
+spec:
+  capacity:
+    storage: {{ .Values.persistence.nfs.size }}
+  accessModes:
+    - {{ .Values.persistence.nfs.accessMode }}
+  storageClassName: {{ .Values.persistence.nfs.storageClassName }}
+  nfs:
+    server: {{ .Values.persistence.nfs.server }}
+    path: {{ .Values.persistence.nfs.path }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-jellyfin-nfs
+  namespace: {{ .Values.namespace }}
+spec:
+  accessModes:
+    - {{ .Values.persistence.nfs.accessMode }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.nfs.size }}
+  storageClassName: {{ .Values.persistence.nfs.storageClassName }}
+  volumeName: pv-jellyfin-nfs
+{{- end }}
