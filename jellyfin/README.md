@@ -1,6 +1,6 @@
 # jellyfin
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/helm-l3st86)](https://artifacthub.io/packages/search?repo=helm-l3st86)
 jellyfin Helm Chart (Backups)
 
@@ -58,3 +58,13 @@ Added new icon
 #### Changed
 
 * First Version
+
+### Version 0.1.2
+
+#### Added
+
+Hardware Acceleration in values for GPU
+
+#### Changed
+
+* Changed image from lscr.io to official jellyfin docker image
