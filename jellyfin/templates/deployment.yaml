@@ -49,6 +49,11 @@ spec:
             httpGet:
               path: /
               port: http
+          {{- if .Values.hwAcceleration.enabled }}
+          securityContext:
+            runAsUser: {{ .Values.hwAcceleration.runAsUser }}
+            runAsGroup: {{ .Values.hwAcceleration.runAsGroup }}     
+          {{- end }}                   
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:

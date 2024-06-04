@@ -69,6 +69,7 @@ autoscaling:
 
 # Enables Hardware GPU aceleration
 # Query the id of the render group on the host system with 'getent group render | cut -d: -f3'
+# Set Security Context as needed
 hwAcceleration:
   enabled: false
   runAsUser: ""
