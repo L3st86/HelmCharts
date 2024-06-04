@@ -28,9 +28,9 @@ spec:
       serviceAccountName: {{ include "jellyfin.serviceAccountName" . }}
       {{- if .Values.hwAcceleration.enabled }}
       securityContext:
-        runAsUser: 1000 # Similar to "user: 1000:1000" on Docker
-        runAsGroup: 1000
-        fsGroup: 1000
+        runAsUser: 0
+        runAsGroup: 0        
+        privileged: true        
         supplementalGroups:
           - {{ .Values.hwAcceleration.rendergroup }}
       {{- end }}            
