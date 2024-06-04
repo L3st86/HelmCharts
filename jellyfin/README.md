@@ -68,3 +68,14 @@ Hardware Acceleration in values for GPU
 #### Changed
 
 * Changed image from lscr.io to official jellyfin docker image
+
+### Version 0.1.3
+
+#### Added
+
+Fixed Hardware Acceleration in values for GPU Permissions in Security context
+
+#### Changed
+
+* Added fix Hardware Acceleration
+

@@ -26,17 +26,16 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       serviceAccountName: {{ include "jellyfin.serviceAccountName" . }}
+      {{- if .Values.hwAcceleration.enabled }}
       securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+        runAsUser: 1000 # Similar to "user: 1000:1000" on Docker
+        runAsGroup: 1000
+        supplementalGroups:
+          - {{ .Values.hwAcceleration.rendergroup }}
+      {{- end }}            
       containers:
         - name: {{ .Chart.Name }}
-          {{- if .Values.hwAcceleration.enabled }}
-          securityContext:
-            runAsUser: 1000 # Similar to "user: 1000:1000" on Docker
-            runAsGroup: 1000
-            supplementalGroups:
-              - {{ .Values.hwAcceleration.rendergroup }}
-          {{- end }}    
+        
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
