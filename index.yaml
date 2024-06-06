@@ -3,7 +3,7 @@ entries:
   duplicati:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T00:14:35.1876436+02:00"
+    created: "2024-06-06T18:52:57.8508994+02:00"
     description: A Helm chart for duplicati
     digest: 6ee228a002527d7d989f8e712744d50be78e3aec7571692f1a4ac54ae6ff74e5
     home: https://github.com/L3st86/HelmCharts/tree/master/duplicati
@@ -18,7 +18,21 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T00:14:35.1926913+02:00"
+    created: "2024-06-06T18:52:57.8559038+02:00"
+    description: A Helm chart for jellyfin Media Server
+    digest: dda486e15103781712cfe34ff099457695cbe70870b74ef271ba87a66453747a
+    home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
+    icon: https://raw.githubusercontent.com/L3st86/HelmCharts/master/jellyfin/images/jellyfin-logo.png
+    name: jellyfin
+    sources:
+    - https://github.com/jellyfin/jellyfin
+    type: application
+    urls:
+    - Charts/jellyfin-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-06-06T18:52:57.855403+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: ecfd6fa2893dac6761cb813c8cd9ae796564cf114e7248e1c586c078decc23f1
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -32,7 +46,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T00:14:35.19169+02:00"
+    created: "2024-06-06T18:52:57.8544019+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 405cb3d10152d16e62cb17e7402b51063398c89f762051f0adcb3efa27400e01
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -46,7 +60,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T00:14:35.1911902+02:00"
+    created: "2024-06-06T18:52:57.8539021+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 199baf5ee9b0a24c2d95cd8bef797245ff33eb6456aea0a872bbd7ad29eec8dd
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -60,7 +74,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T00:14:35.1896448+02:00"
+    created: "2024-06-06T18:52:57.8534017+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 38c9bd2ea6578167b9f582f79015f1e1d5c9631834a2dc998f21c3e111bae385
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -74,7 +88,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T00:14:35.1896448+02:00"
+    created: "2024-06-06T18:52:57.8529007+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 2bb41cd57645717567c7e2d200342eb5d9fb33f4ad71c69188154d80c6e9be83
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -88,7 +102,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T00:14:35.1891445+02:00"
+    created: "2024-06-06T18:52:57.8518998+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 6a488b6383e21ebee4a36a668e33ca4598cd35c0ca3a7e133d3dc98061658f97
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -102,7 +116,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T00:14:35.1881436+02:00"
+    created: "2024-06-06T18:52:57.8513994+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 60b437e2d72f1bde0b4ae8885be13135ac43671495d6ca887d9613225b50cc42
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -117,7 +131,7 @@ entries:
   uptimekuma:
   - apiVersion: v2
     appVersion: 1.16.1
-    created: "2024-06-05T00:14:35.1936924+02:00"
+    created: "2024-06-06T18:52:57.8569051+02:00"
     description: Monitoring Tool Uptime Kuma Chart
     digest: 683c21abb006d66018f6b7cbc95e7d6ad0cf754b7caee8ea656d84c377b2166f
     home: https://github.com/L3st86/HelmCharts/tree/master/UptimeKuma
@@ -131,7 +145,7 @@ entries:
     version: 0.1.10
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-06-05T00:14:35.1941927+02:00"
+    created: "2024-06-06T18:52:57.8574047+02:00"
     description: Monitoring Tool Uptime Kuma Chart
     digest: aeae1629899c5f4264e283bc5ea3be248c7a3ca4af6de6d5f309a9ad15e05aa4
     home: https://github.com/L3st86/HelmCharts/tree/master/UptimeKuma
@@ -143,4 +157,4 @@ entries:
     urls:
     - Charts/uptimekuma-0.1.9.tgz
     version: 0.1.9
-generated: "2024-06-05T00:14:35.1866424+02:00"
+generated: "2024-06-06T18:52:57.8498979+02:00"

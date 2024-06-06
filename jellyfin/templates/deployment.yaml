@@ -52,7 +52,8 @@ spec:
           {{- if .Values.hwAcceleration.enabled }}
           securityContext:
             runAsUser: {{ .Values.hwAcceleration.runAsUser }}
-            runAsGroup: {{ .Values.hwAcceleration.runAsGroup }}     
+            runAsGroup: {{ .Values.hwAcceleration.runAsGroup }}
+            privileged: true              
           {{- end }}                   
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
@@ -60,6 +61,8 @@ spec:
             {{- if .Values.hwAcceleration.enabled }}
             - name: render-device
               mountPath: "/dev/dri/renderD128"
+            - name: render-card
+              mountPath: "/dev/dri/card0"
             {{- end }}
             {{- if .Values.persistence.config.enabled }}
             - name: config
@@ -74,6 +77,9 @@ spec:
         - name: "render-device"
           hostPath:
             path: "/dev/dri/renderD128"
+        - name: "render-card"
+          hostPath:
+            path: "/dev/dri/card0"
         {{- end }}      
         {{- if .Values.persistence.config.enabled }}
         - name: config
