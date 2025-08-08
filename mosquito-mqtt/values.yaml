@@ -65,7 +65,7 @@ podSecurityContext: {}
 
 service:
   type: ClusterIP
-  port: 1883
+  port: 1884
 
 
 resources: 
