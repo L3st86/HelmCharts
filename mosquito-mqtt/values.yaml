@@ -1,0 +1,98 @@
+# Default values for mosquito-mqtt.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+
+image:
+  repository: mosquito-mqtt/mosquito-mqtt
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: "mosquito-mqtt"
+fullnameOverride: "mosquito-mqtt"
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+ports:
+  mqtt:
+    port: 1883
+    # sets consistent nodePort, required to set service.type=NodePort
+    # nodePort: 31883
+    protocol: TCP
+  websocket:
+    port: 9090
+    protocol: TCP
+
+existingConfigMap: ""
+config: |
+  persistence true
+  persistence_location /mosquitto/data/
+  log_dest file /mosquitto/log/mosquitto.log
+  # What to log
+  log_type error
+  log_type warning
+  log_type notice
+  log_type information
+  log_dest stdout
+  listener 1883
+  ## Authentication ##
+  allow_anonymous false
+  password_file /mosquitto/config/mosquitto.passwd
+
+authentication:
+  enabled: true
+  existingSecret: mosquito-password
+  passwordKey: mosquitto.passwd
+  passwordFilePath: /mosquitto/config/mosquitto.passwd
+
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+service:
+  type: ClusterIP
+  port: 1883
+
+
+resources: 
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+  
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  existingClaim: ""
+  mountPath: /mosquitto/data
+  subPath: ""
+   
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

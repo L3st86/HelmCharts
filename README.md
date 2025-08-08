@@ -33,10 +33,18 @@ Readme: [Duplicati](https://github.com/L3st86/HelmCharts/blob/master/Duplicati/R
 jellyfin Helm Chart (Backups)
 Readme: [jellyfin](https://github.com/L3st86/HelmCharts/blob/master/jellyfin/README.md)
 
+# Mosquito-MQTT
+![Alt text](https://raw.githubusercontent.com/L3st86/HelmCharts/master/mosquito-mqtt/images/mosquito-mqtt-logo)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.8-informational?style=flat-square) ![AppVersion: 2.0.22](https://img.shields.io/badge/AppVersion-2.0.22-informational?style=flat-square)
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/helm-l3st86)](https://artifacthub.io/packages/search?repo=helm-l3st86)
+
+Mosquito-MQTT Helm Chart (Backups)
+Readme: [mosquito-mqtt](https://github.com/L3st86/HelmCharts/blob/master/mosquito-mqtt/README.md)
+
 
 ### Notes - Commands for building Charts:
 ```sh
-helm create <chartname>
+helm create <chartname> # crea un chart de 0
 helm lint <chartname>
 helm package <chartname>
 helm repo index .
