@@ -56,14 +56,12 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.persistence.enabled }}
           volumeMounts:
-            - name: {{ .Values.persistence.name }}
-              mountPath: /app/data
+            - name: data
+              mountPath: {{ .Values.persistence.mountPath }}
+              subPath: {{ .Values.persistence.subPath }}          
             - name: config
               mountPath: /mosquitto/config/mosquitto.conf
               subPath: mosquitto.conf
-            - name: data
-              mountPath: {{ .Values.persistence.mountPath }}
-              subPath: {{ .Values.persistence.subPath }}
             {{- if and .Values.authentication.enabled .Values.authentication.existingSecret }}
             - name: passwordfile
               mountPath: {{ .Values.authentication.passwordFilePath }}
@@ -74,14 +72,9 @@ spec:
           {{- end }}
       {{- if .Values.persistence.enabled }}
       volumes:
-        - name: {{ .Values.persistence.name }}
-          persistentVolumeClaim:
-            claimName: pvc-{{ .Values.persistence.name }}
-
         - name: config
           configMap:
             name: {{ if .Values.existingConfigMap }}{{ .Values.existingConfigMap }}{{ else }}{{ include "mosquito-mqtt.fullname" . }}{{ end }}
-
         - name: data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
@@ -89,7 +82,6 @@ spec:
           {{- else }}
           emptyDir: {}
           {{- end }}
-
         {{- if and .Values.authentication.enabled .Values.authentication.existingSecret }}
         - name: passwordfile
           secret:
