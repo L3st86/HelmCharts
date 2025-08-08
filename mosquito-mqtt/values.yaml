@@ -24,7 +24,7 @@ serviceAccount:
 
 ports:
   mqtt:
-    port: 1883
+    port: 1884
     # sets consistent nodePort, required to set service.type=NodePort
     # nodePort: 31883
     protocol: TCP
@@ -43,7 +43,7 @@ config: |
   log_type notice
   log_type information
   log_dest stdout
-  listener 1883
+  listener 1884
   ## Authentication ##
   allow_anonymous false
   password_file /mosquitto/config/mosquitto.passwd
@@ -54,6 +54,9 @@ authentication:
   passwordKey: mosquitto.passwd
   passwordFilePath: /mosquitto/config/mosquitto.passwd
 
+securityContext: {}
+  # runAsUser: 1001
+  # fsGroup: 10000
 
 podAnnotations: {}
 
