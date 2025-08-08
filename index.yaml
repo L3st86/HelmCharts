@@ -141,7 +141,7 @@ entries:
     - https://github.com/mosquito-mqtt/mosquito-mqtt
     type: application
     urls:
-    - mosquito-mqtt-0.1.0.tgz
+    - Charts/mosquito-mqtt-0.1.0.tgz
     version: 0.1.0
   uptimekuma:
   - apiVersion: v2
