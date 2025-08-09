@@ -2,14 +2,28 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "mosquito-mqtt.fullname" . }}
-  labels:
-    {{- include "mosquito-mqtt.labels" . | nindent 4 }}
+  labels: {{- include "mosquito-mqtt.labels" . | nindent 4 }}
+{{- with .Values.service.annotations }}
+  annotations:
+  {{- range $key, $value := . }}
+    {{ $key }}: {{ $value | quote }}
+  {{- end }}
+{{- end }}
 spec:
   type: {{ .Values.service.type }}
+{{- if .Values.service.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.loadBalancerIP }}
+{{- end }}
+  externalTrafficPolicy: {{ .Values.service.externalTrafficPolicy }}
+{{- with .Values.ports }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    {{- include "mosquito-mqtt.selectorLabels" . | nindent 4 }}
+  {{- range $key, $value := . }}
+    - name: {{ $key }}
+      port: {{ $value.port }}
+    {{- if $value.nodePort }}
+      nodePort: {{ $value.nodePort }}
+    {{- end }}
+      targetPort: {{ $key }}
+      protocol: {{ default "TCP" $value.protocol }}
+  {{- end }}
+{{- end }}

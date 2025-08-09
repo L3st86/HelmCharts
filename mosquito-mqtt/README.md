@@ -1,6 +1,6 @@
 # mosquito-mqtt
 
-![Version: 0.1.8](https://img.shields.io/badge/Version-0.1.8-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/helm-l3st86)](https://artifacthub.io/packages/search?repo=helm-l3st86)
 mosquito-mqtt Helm Chart (Backups)
 
@@ -22,9 +22,9 @@ helm install mosquito-mqtt l3st86/mosquito-mqtt
 
 ## Installing the Chart
 
-To install the chart in namespace 'backups'
+To install the chart in namespace 'home-assistant'
 ```console
-helm install mosquito-mqtt l3st86/mosquito-mqtt --namespace backups --set namespace=backups
+helm install mosquito-mqtt l3st86/mosquito-mqtt --namespace home-assistant --set namespace=home-assistant
 ```
 
 ## Uninstalling the Chart
@@ -48,40 +48,9 @@ helm install mosquito-mqtt l3st86/mosquito-mqtt -f values.yaml
 
 ## Changelog
 
-### Version 0.1.1
-
-#### Added
-
-First Version Full working Released
-Added new icon
-
 #### Changed
 
-* First Version
+* First Version Working
 
 ### Version 0.1.2
-
-#### Added
-
-Hardware Acceleration in values for GPU
-
-#### Changed
-
-* Changed image from lscr.io to official mosquito-mqtt docker image
-
-### Version 0.1.3
-
-#### Added
-
-Fixed Hardware Acceleration in values for GPU Permissions in Security context
-
-#### Changed
-
-* Added fix Hardware Acceleration
-
-### Version 0.1.8
-
-#### Changed
-
-* Fixed permissions for HW Acceleration
 
