@@ -35,7 +35,7 @@ Readme: [jellyfin](https://github.com/L3st86/HelmCharts/blob/master/jellyfin/REA
 
 # Mosquito-MQTT
 ![Alt text](https://raw.githubusercontent.com/L3st86/HelmCharts/master/mosquito-mqtt/images/mosquito-mqtt-logo.png)
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.8-informational?style=flat-square) ![AppVersion: 2.0.22](https://img.shields.io/badge/AppVersion-2.0.22-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![AppVersion: 2.0.22](https://img.shields.io/badge/AppVersion-2.0.22-informational?style=flat-square)
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/helm-l3st86)](https://artifacthub.io/packages/search?repo=helm-l3st86)
 
 Mosquito-MQTT Helm Chart (Backups)
