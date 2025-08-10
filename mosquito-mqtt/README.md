@@ -6,7 +6,7 @@ mosquito-mqtt Helm Chart (Backups)
 
 ## Source Code
 
-* <https://github.com/linuxserver/docker-mosquito-mqtt>
+* <https://hub.docker.com/_/eclipse-mosquitto>
 
 ## Requirements
 
