@@ -2,28 +2,31 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "mosquito-mqtt.fullname" . }}
-  labels: {{- include "mosquito-mqtt.labels" . | nindent 4 }}
-{{- with .Values.service.annotations }}
+  labels:
+    {{- include "mosquito-mqtt.labels" . | nindent 4 }}
+  {{- with .Values.service.annotations }}
   annotations:
-  {{- range $key, $value := . }}
-    {{ $key }}: {{ $value | quote }}
+    {{- toYaml . | nindent 4 }}
   {{- end }}
-{{- end }}
 spec:
   type: {{ .Values.service.type }}
-{{- if .Values.service.loadBalancerIP }}
+  {{- if and (eq .Values.service.type "LoadBalancer") .Values.service.loadBalancerIP }}
   loadBalancerIP: {{ .Values.service.loadBalancerIP }}
-{{- end }}
-  externalTrafficPolicy: {{ .Values.service.externalTrafficPolicy }}
-{{- with .Values.ports }}
-  ports:
-  {{- range $key, $value := . }}
-    - name: {{ $key }}
-      port: {{ $value.port }}
-    {{- if $value.nodePort }}
-      nodePort: {{ $value.nodePort }}
-    {{- end }}
-      targetPort: {{ $key }}
-      protocol: {{ default "TCP" $value.protocol }}
   {{- end }}
-{{- end }}
+  {{- if and (or (eq .Values.service.type "LoadBalancer") (eq .Values.service.type "NodePort")) .Values.service.externalTrafficPolicy }}
+  externalTrafficPolicy: {{ .Values.service.externalTrafficPolicy }}
+  {{- end }}
+
+  selector:
+    {{- include "mosquito-mqtt.selectorLabels" . | nindent 4 }}
+
+  ports:
+  {{- range $name, $p := .Values.ports }}
+    - name: {{ $name }}
+      port: {{ $p.port }}
+      targetPort: {{ $name }}
+      protocol: {{ default "TCP" $p.protocol }}
+      {{- if $p.nodePort }}
+      nodePort: {{ $p.nodePort }}
+      {{- end }}
+  {{- end }}
