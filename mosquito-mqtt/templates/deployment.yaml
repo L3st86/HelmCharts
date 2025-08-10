@@ -28,69 +28,112 @@ spec:
       serviceAccountName: {{ include "mosquito-mqtt.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+
+      # === INIT CONTAINER: prepara /mosquitto/config RW con permisos correctos ===
+      initContainers:
+        - name: prepare-config
+          image: alpine:3.19
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+          command: ["/bin/sh","-c"]
+          args:
+            - |
+              set -e
+              cp /config-ro/mosquitto.conf /config-rw/mosquitto.conf
+              {{- if and .Values.authentication.enabled .Values.authentication.existingSecret }}
+              if [ -f /secret-ro/mosquitto.passwd ]; then
+                cp /secret-ro/mosquitto.passwd /config-rw/mosquitto.passwd
+                chmod 0600 /config-rw/mosquitto.passwd
+              fi
+              {{- end }}
+              chown -R 1883:1883 /config-rw
+          volumeMounts:
+            - name: mosquitto-config
+              mountPath: /config-rw
+            - name: config-readonly
+              mountPath: /config-ro
+            {{- if and .Values.authentication.enabled .Values.authentication.existingSecret }}
+            - name: passwordfile
+              mountPath: /secret-ro
+            {{- end }}
+
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-        {{- with .Values.ports }}
+          {{- with .Values.ports }}
           ports:
           {{- range $key, $value := . }}
             - name: {{ $key }}
               containerPort: {{ $value.port }}
               protocol: {{ default "TCP" $value.protocol }}
           {{- end }}
-        {{- end }}              
+          {{- end }}
+          # Probes contra MQTT (1883). Cambia a websocket si lo prefieres.
           livenessProbe:
             tcpSocket:
-              port: websocket
-            initialDelaySeconds: 5
-            periodSeconds: 1
+              port: mqtt
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
           readinessProbe:
             tcpSocket:
-              port: websocket
-            initialDelaySeconds: 3
-            periodSeconds: 3              
+              port: mqtt
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- if .Values.persistence.enabled }}
           volumeMounts:
+            # RW listo con permisos (aquí dejó todo el initContainer)
+            - name: mosquitto-config
+              mountPath: /mosquitto/config
+            {{- if .Values.persistence.enabled }}
             - name: data
               mountPath: {{ .Values.persistence.mountPath }}
-              subPath: {{ .Values.persistence.subPath }}          
-            - name: config
-              mountPath: /mosquitto/config/mosquitto.conf
-              subPath: mosquitto.conf
-            {{- if and .Values.authentication.enabled .Values.authentication.existingSecret }}
-            - name: passwordfile
-              mountPath: {{ .Values.authentication.passwordFilePath }}
-              subPath: passwordfile
+              subPath: {{ .Values.persistence.subPath }}
             {{- end }}
           {{- with .Values.extraVolumeMounts }}
             {{ toYaml . | indent 12 | trim }}
           {{- end }}
-      {{- if .Values.persistence.enabled }}
+
       volumes:
-        - name: config
+        # Destino RW para /mosquitto/config
+        - name: mosquitto-config
+          emptyDir: {}
+
+        # ConfigMap con mosquitto.conf (solo lectura)
+        - name: config-readonly
           configMap:
             name: {{ if .Values.existingConfigMap }}{{ .Values.existingConfigMap }}{{ else }}{{ include "mosquito-mqtt.fullname" . }}{{ end }}
-        - name: data
-          {{- if .Values.persistence.enabled }}
-          persistentVolumeClaim:
-            claimName: {{ if .Values.persistence.existingClaim }}{{ .Values.persistence.existingClaim }}{{ else }}{{ include "mosquito-mqtt.fullname" . }}{{ end }}
-          {{- else }}
-          emptyDir: {}
-          {{- end }}
+
+        # Secret con mosquitto.passwd (solo lectura, opcional)
         {{- if and .Values.authentication.enabled .Values.authentication.existingSecret }}
         - name: passwordfile
           secret:
             secretName: {{ .Values.authentication.existingSecret }}
             items:
               - key: {{ .Values.authentication.passwordKey }}
-                path: passwordfile
+                path: mosquitto.passwd
+            defaultMode: 384  # 0600 (da igual porque luego copiamos)
         {{- end }}
-      {{- end }}
+
+        {{- if .Values.persistence.enabled }}
+        - name: data
+          {{- if .Values.persistence.existingClaim }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim }}
+          {{- else }}
+          persistentVolumeClaim:
+            claimName: {{ include "mosquito-mqtt.fullname" . }}
+          {{- end }}
+        {{- end }}
+
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -103,4 +146,3 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-{{- end }}      

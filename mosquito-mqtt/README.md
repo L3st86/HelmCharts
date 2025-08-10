@@ -1,6 +1,6 @@
 # mosquito-mqtt
 
-![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
+![Version: 0.1.4](https://img.shields.io/badge/Version-0.1.4-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/helm-l3st86)](https://artifacthub.io/packages/search?repo=helm-l3st86)
 mosquito-mqtt Helm Chart (Backups)
 
@@ -50,7 +50,16 @@ helm install mosquito-mqtt l3st86/mosquito-mqtt -f values.yaml
 
 #### Changed
 
-* First Version Working
+### Version 0.1.4
+
+* Added sidecar for permissions password file
+
+
+### Version 0.1.3
+
+* Some fixes
 
 ### Version 0.1.2
+* First Version Working
+
 
