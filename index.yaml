@@ -3,7 +3,7 @@ entries:
   duplicati:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-10T19:18:35.5364962+02:00"
+    created: "2025-08-21T18:41:37.6374894+02:00"
     description: A Helm chart for duplicati
     digest: 6ee228a002527d7d989f8e712744d50be78e3aec7571692f1a4ac54ae6ff74e5
     home: https://github.com/L3st86/HelmCharts/tree/master/duplicati
@@ -18,7 +18,7 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-10T19:18:35.5433543+02:00"
+    created: "2025-08-21T18:41:37.7287898+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: dda486e15103781712cfe34ff099457695cbe70870b74ef271ba87a66453747a
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -32,7 +32,7 @@ entries:
     version: 0.1.8
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-10T19:18:35.542301+02:00"
+    created: "2025-08-21T18:41:37.7153327+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: ecfd6fa2893dac6761cb813c8cd9ae796564cf114e7248e1c586c078decc23f1
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -46,7 +46,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-10T19:18:35.5417752+02:00"
+    created: "2025-08-21T18:41:37.7069753+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 405cb3d10152d16e62cb17e7402b51063398c89f762051f0adcb3efa27400e01
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -60,7 +60,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-10T19:18:35.5407243+02:00"
+    created: "2025-08-21T18:41:37.6916396+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 199baf5ee9b0a24c2d95cd8bef797245ff33eb6456aea0a872bbd7ad29eec8dd
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -74,7 +74,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-10T19:18:35.5396539+02:00"
+    created: "2025-08-21T18:41:37.6837036+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 38c9bd2ea6578167b9f582f79015f1e1d5c9631834a2dc998f21c3e111bae385
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -88,7 +88,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-10T19:18:35.5391252+02:00"
+    created: "2025-08-21T18:41:37.6702184+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 2bb41cd57645717567c7e2d200342eb5d9fb33f4ad71c69188154d80c6e9be83
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -102,7 +102,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-10T19:18:35.5380762+02:00"
+    created: "2025-08-21T18:41:37.6627665+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 6a488b6383e21ebee4a36a668e33ca4598cd35c0ca3a7e133d3dc98061658f97
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -116,7 +116,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-10T19:18:35.5375499+02:00"
+    created: "2025-08-21T18:41:37.654887+02:00"
     description: A Helm chart for jellyfin Media Server
     digest: 60b437e2d72f1bde0b4ae8885be13135ac43671495d6ca887d9613225b50cc42
     home: https://github.com/L3st86/HelmCharts/tree/master/jellyfin
@@ -131,7 +131,21 @@ entries:
   mosquito-mqtt:
   - apiVersion: v2
     appVersion: 2.0.22
-    created: "2025-08-10T19:18:35.5493241+02:00"
+    created: "2025-08-21T18:41:37.5980744+02:00"
+    description: A Helm chart for Mosquitto MQTT
+    digest: e0150d14178b99766397be3edf6124e4846e4fe4c5ed9b9763c1c2ad56a220d7
+    home: https://github.com/L3st86/HelmCharts/tree/master/mosquito-mqtt
+    icon: https://raw.githubusercontent.com/L3st86/HelmCharts/master/mosquito-mqtt/images/mosquito-mqtt-logo.png
+    name: mosquito-mqtt
+    sources:
+    - https://github.com/mosquito-mqtt/mosquito-mqtt
+    type: application
+    urls:
+    - mosquito-mqtt-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 2.0.22
+    created: "2025-08-21T18:41:37.764928+02:00"
     description: A Helm chart for Mosquitto MQTT
     digest: 643b69645d859fe3cb13468a386b6d7530043a155c6f0c3e09b190e7da5a6f0b
     home: https://github.com/L3st86/HelmCharts/tree/master/mosquito-mqtt
@@ -143,66 +157,10 @@ entries:
     urls:
     - Charts/mosquito-mqtt-0.1.4.tgz
     version: 0.1.4
-  - apiVersion: v2
-    appVersion: 2.0.22
-    created: "2025-08-10T19:18:35.5481647+02:00"
-    description: A Helm chart for Mosquitto MQTT
-    digest: ec6ed9c79ca9d8afcab48d53e5313cc244b7ec5bf0843dc40ab16f75836db7d4
-    home: https://github.com/L3st86/HelmCharts/tree/master/mosquito-mqtt
-    icon: https://raw.githubusercontent.com/L3st86/HelmCharts/master/mosquito-mqtt/images/mosquito-mqtt-logo.png
-    name: mosquito-mqtt
-    sources:
-    - https://github.com/mosquito-mqtt/mosquito-mqtt
-    type: application
-    urls:
-    - Charts/mosquito-mqtt-0.1.3.tgz
-    version: 0.1.3
-  - apiVersion: v2
-    appVersion: 2.0.22
-    created: "2025-08-10T19:18:35.547116+02:00"
-    description: A Helm chart for Mosquitto MQTT
-    digest: 4ee0a3badcdff5b5c18dea5d9986bf1dcfba2cda96220497fc4bc8c28cb9fc08
-    home: https://github.com/L3st86/HelmCharts/tree/master/mosquito-mqtt
-    icon: https://raw.githubusercontent.com/L3st86/HelmCharts/master/mosquito-mqtt/images/mosquito-mqtt-logo.png
-    name: mosquito-mqtt
-    sources:
-    - https://github.com/mosquito-mqtt/mosquito-mqtt
-    type: application
-    urls:
-    - Charts/mosquito-mqtt-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: 2.0.22
-    created: "2025-08-10T19:18:35.5465826+02:00"
-    description: A Helm chart for Mosquitto MQTT
-    digest: c060cf3d38f504d1fed81901d4dcaa36f767454f89969f133a88d4abf582c0e7
-    home: https://github.com/L3st86/HelmCharts/tree/master/mosquito-mqtt
-    icon: https://raw.githubusercontent.com/L3st86/HelmCharts/master/mosquito-mqtt/images/mosquito-mqtt-logo.png
-    name: mosquito-mqtt
-    sources:
-    - https://github.com/mosquito-mqtt/mosquito-mqtt
-    type: application
-    urls:
-    - Charts/mosquito-mqtt-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: 2.0.22
-    created: "2025-08-10T19:18:35.5455236+02:00"
-    description: A Helm chart for Mosquitto MQTT
-    digest: 338872e0721a70c9c533a12a68831a43ca357e60d3ecd14eed112602b006d0e8
-    home: https://github.com/L3st86/HelmCharts/tree/master/mosquito-mqtt
-    icon: https://raw.githubusercontent.com/L3st86/HelmCharts/master/mosquito-mqtt/images/mosquito-mqtt-logo.png
-    name: mosquito-mqtt
-    sources:
-    - https://github.com/mosquito-mqtt/mosquito-mqtt
-    type: application
-    urls:
-    - Charts/mosquito-mqtt-0.1.0.tgz
-    version: 0.1.0
   uptimekuma:
   - apiVersion: v2
     appVersion: 1.16.1
-    created: "2025-08-10T19:18:35.5498618+02:00"
+    created: "2025-08-21T18:41:37.7716501+02:00"
     description: Monitoring Tool Uptime Kuma Chart
     digest: 683c21abb006d66018f6b7cbc95e7d6ad0cf754b7caee8ea656d84c377b2166f
     home: https://github.com/L3st86/HelmCharts/tree/master/UptimeKuma
@@ -216,7 +174,7 @@ entries:
     version: 0.1.10
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-10T19:18:35.5509177+02:00"
+    created: "2025-08-21T18:41:37.7898804+02:00"
     description: Monitoring Tool Uptime Kuma Chart
     digest: aeae1629899c5f4264e283bc5ea3be248c7a3ca4af6de6d5f309a9ad15e05aa4
     home: https://github.com/L3st86/HelmCharts/tree/master/UptimeKuma
@@ -228,4 +186,4 @@ entries:
     urls:
     - Charts/uptimekuma-0.1.9.tgz
     version: 0.1.9
-generated: "2025-08-10T19:18:35.5354586+02:00"
+generated: "2025-08-21T18:41:37.5970411+02:00"

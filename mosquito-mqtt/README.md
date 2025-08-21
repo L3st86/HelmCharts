@@ -55,11 +55,3 @@ helm install mosquito-mqtt l3st86/mosquito-mqtt -f values.yaml
 * Added sidecar for permissions password file
 
 
-### Version 0.1.3
-
-* Some fixes
-
-### Version 0.1.2
-* First Version Working
-
-
