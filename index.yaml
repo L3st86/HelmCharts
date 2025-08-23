@@ -131,20 +131,6 @@ entries:
   mosquito-mqtt:
   - apiVersion: v2
     appVersion: 2.0.22
-    created: "2025-08-21T18:41:37.5980744+02:00"
-    description: A Helm chart for Mosquitto MQTT
-    digest: e0150d14178b99766397be3edf6124e4846e4fe4c5ed9b9763c1c2ad56a220d7
-    home: https://github.com/L3st86/HelmCharts/tree/master/mosquito-mqtt
-    icon: https://raw.githubusercontent.com/L3st86/HelmCharts/master/mosquito-mqtt/images/mosquito-mqtt-logo.png
-    name: mosquito-mqtt
-    sources:
-    - https://github.com/mosquito-mqtt/mosquito-mqtt
-    type: application
-    urls:
-    - mosquito-mqtt-0.1.4.tgz
-    version: 0.1.4
-  - apiVersion: v2
-    appVersion: 2.0.22
     created: "2025-08-21T18:41:37.764928+02:00"
     description: A Helm chart for Mosquitto MQTT
     digest: 643b69645d859fe3cb13468a386b6d7530043a155c6f0c3e09b190e7da5a6f0b
